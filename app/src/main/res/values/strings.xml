@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Slots</string>
+
+    <string name="combinations">COMBINATIONS</string>
+
+    <!--BOTTOM BAR-->
+    <string name="spin">SPIN!</string>
+    <string name="my_coins">MY COINS</string>
+    <string name="lines">LINES</string>
+    <string name="bet">BET</string>
+
+
 </resources>
