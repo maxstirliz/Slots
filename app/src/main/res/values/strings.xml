@@ -8,6 +8,8 @@
     <string name="my_coins">MY COINS</string>
     <string name="lines">LINES</string>
     <string name="bet">BET</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
 
 
 </resources>

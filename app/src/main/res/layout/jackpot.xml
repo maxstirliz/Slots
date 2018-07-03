@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_bottom_pics"
-        android:background="@drawable/text_jackpot" />
+        android:src="@drawable/text_jackpot" />
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_bottom_pics">
 
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginBottom="@dimen/margin_bottom_pics"
-            android:background="@drawable/field_jackpot" />
+            android:src="@drawable/field_jackpot" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -33,8 +33,8 @@
     </RelativeLayout>
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/board_jackpot" />
+        android:src="@drawable/board_jackpot" />
 
 </LinearLayout>
