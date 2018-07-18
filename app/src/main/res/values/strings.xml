@@ -2,6 +2,8 @@
     <string name="app_name">Slots</string>
 
     <string name="combinations">COMBINATIONS</string>
+    <string name="win_splash">YOU WON!</string>
+    <string name="coins">coins</string>
 
     <!--BOTTOM BAR-->
     <string name="spin">SPIN!</string>

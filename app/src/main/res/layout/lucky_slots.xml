@@ -16,37 +16,44 @@
         android:background="@drawable/spinner_shape">
 
         <LinearLayout
-            android:padding="2dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="2dp">
 
-            <ImageView
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/spinner1"
+                android:scrollbars="none"
                 android:layout_width="76dp"
                 android:layout_height="216dp"
                 android:layout_marginRight="5dp"
-                android:src="@drawable/spinner" />
+                android:background="@drawable/spinner" />
 
-            <ImageView
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/spinner2"
+                android:scrollbars="none"
                 android:layout_width="76dp"
                 android:layout_height="216dp"
                 android:layout_marginRight="5dp"
-                android:src="@drawable/spinner" />
+                android:background="@drawable/spinner" />
 
-            <ImageView
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/spinner3"
+                android:scrollbars="none"
                 android:layout_width="76dp"
                 android:layout_height="216dp"
-                android:src="@drawable/spinner" />
+                android:layout_marginRight="5dp"
+                android:background="@drawable/spinner" />
 
         </LinearLayout>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/spinner_line_goriz"/>
+            android:layout_centerVertical="true"
+            android:src="@drawable/spinner_line_goriz" />
 
     </RelativeLayout>
 
