@@ -1,50 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/win_splash"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <FrameLayout
-        android:layout_centerInParent="true"
-        android:layout_width="100dp"
-        android:layout_height="80dp"
-        android:background="@android:color/holo_green_dark" />
+        android:id="@+id/frameLayout"
+        android:layout_width="152dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/corner_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+    </FrameLayout>
 
     <TextView
-        android:translationY="20dp"
-        android:layout_centerInParent="true"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/win_splash"
         android:textColor="@android:color/white"
-        android:textStyle="bold" />
+        android:textSize="@dimen/text_combinations"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+        app:layout_constraintEnd_toEndOf="@+id/frameLayout"
+        app:layout_constraintStart_toStartOf="@+id/frameLayout"
+        tools:text="@string/win_splash" />
 
-    <RelativeLayout
-        android:layout_centerInParent="true"
-        android:translationY="-40dp"
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/coins_snackbar" />
+
+    <include
+        layout="@layout/you_won_text"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView8"
+        app:layout_constraintStart_toStartOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="@+id/imageView8" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/coins_snackbar"/>
-
-        <TextView
-            android:id="@+id/win_splash"
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="50"/>
-
-        <TextView
-            android:layout_below="@id/win_splash"
-            android:layout_centerHorizontal="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:translationY="25dp"
-            android:text="@string/coins"/>
-
-    </RelativeLayout>
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

@@ -23,6 +23,7 @@
             android:src="@drawable/field_jackpot" />
 
         <TextView
+            android:id="@+id/jackpot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"

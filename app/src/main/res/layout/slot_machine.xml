@@ -25,7 +25,7 @@
         android:layout_weight="8">
 
         <include
-            layout="@layout/lucky_slots"
+            layout="@layout/spinner_constraint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
