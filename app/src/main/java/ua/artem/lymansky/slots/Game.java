@@ -36,10 +36,10 @@ public class Game {
 
             switch (i) {
                 case 1:
-                    prize = 25;
+                    prize = bet * 5;
                     break;
                 case 2:
-                    prize = 50;
+                    prize = bet * 10;
                     break;
                 case 3:
                     prize = jackpot;
@@ -51,27 +51,27 @@ public class Game {
             hasWon = true;
             switch (slots[0]) {
                 case 1:
-                    prize = 10;
+                    prize = bet * 2;
                     myCoins += prize;
                     break;
                 case 2:
-                    prize = 15;
+                    prize = bet * 3;
                     myCoins += prize;
                     break;
                 case 3:
-                    prize = 25;
+                    prize = bet * 5;
                     myCoins += prize;
                     break;
                 case 4:
-                    prize = 35;
+                    prize = bet * 7;
                     myCoins += prize;
                     break;
                 case 5:
-                    prize = 50;
+                    prize = bet * 10;
                     myCoins += prize;
                     break;
                 case 6:
-                    prize = 70;
+                    prize = bet * 15;
                     myCoins += prize;
                     break;
             }

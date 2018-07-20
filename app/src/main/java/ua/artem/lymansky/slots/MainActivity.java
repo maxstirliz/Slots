@@ -2,13 +2,13 @@ package ua.artem.lymansky.slots;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -73,9 +73,18 @@ public class MainActivity extends AppCompatActivity {
         rv1.setHasFixedSize(true);
         rv2.setHasFixedSize(true);
         rv3.setHasFixedSize(true);
-        rv1.setLayoutManager(new LinearLayoutManager(this));
-        rv2.setLayoutManager(new LinearLayoutManager(this));
-        rv3.setLayoutManager(new LinearLayoutManager(this));
+
+        
+        final CustomLayoutManager layoutManager1 = new CustomLayoutManager(this);
+        layoutManager1.setScrollEnabled(false);
+        rv1.setLayoutManager(layoutManager1);
+        final CustomLayoutManager layoutManager2 = new CustomLayoutManager(this);
+        layoutManager2.setScrollEnabled(false);
+        rv2.setLayoutManager(layoutManager2);
+        final CustomLayoutManager layoutManager3 = new CustomLayoutManager(this);
+        layoutManager3.setScrollEnabled(false);
+        rv3.setLayoutManager(layoutManager3);
+
         rv1.setAdapter(adapter);
         rv2.setAdapter(adapter);
         rv3.setAdapter(adapter);
@@ -94,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (newState) {
                     case RecyclerView.SCROLL_STATE_IDLE:
                         rv1.scrollToPosition(game.getPosition(0));
+                        layoutManager1.setScrollEnabled(false);
                 }
             }
         });
@@ -105,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (newState) {
                     case RecyclerView.SCROLL_STATE_IDLE:
                         rv2.scrollToPosition(game.getPosition(1));
+                        layoutManager2.setScrollEnabled(false);
                 }
             }
         });
@@ -116,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (newState) {
                     case RecyclerView.SCROLL_STATE_IDLE:
                         rv3.scrollToPosition(game.getPosition(2));
+                        layoutManager3.setScrollEnabled(false);
                         updateText();
                         if (game.getHasWon()) {
                             LayoutInflater inflater = getLayoutInflater();
@@ -138,8 +150,10 @@ public class MainActivity extends AppCompatActivity {
         spinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                layoutManager1.setScrollEnabled(true);
+                layoutManager2.setScrollEnabled(true);
+                layoutManager3.setScrollEnabled(true);
                 game.getSpinResults();
-
                 position1 = game.getPosition(0) + coef1;
                 position2 = game.getPosition(1) + coef2;
                 position3 = game.getPosition(2) + coef3;
