@@ -33,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView rv2;
     private RecyclerView rv3;
     private SpinnerAdapter adapter;
+    private CustomLayoutManager layoutManager1;
+    private CustomLayoutManager layoutManager2;
+    private CustomLayoutManager layoutManager3;
 
     private ImageButton spinButton;
     private ImageButton plusButton;
@@ -74,14 +77,14 @@ public class MainActivity extends AppCompatActivity {
         rv2.setHasFixedSize(true);
         rv3.setHasFixedSize(true);
 
-        
-        final CustomLayoutManager layoutManager1 = new CustomLayoutManager(this);
+
+        layoutManager1 = new CustomLayoutManager(this);
         layoutManager1.setScrollEnabled(false);
         rv1.setLayoutManager(layoutManager1);
-        final CustomLayoutManager layoutManager2 = new CustomLayoutManager(this);
+        layoutManager2 = new CustomLayoutManager(this);
         layoutManager2.setScrollEnabled(false);
         rv2.setLayoutManager(layoutManager2);
-        final CustomLayoutManager layoutManager3 = new CustomLayoutManager(this);
+        layoutManager3 = new CustomLayoutManager(this);
         layoutManager3.setScrollEnabled(false);
         rv3.setLayoutManager(layoutManager3);
 
@@ -194,9 +197,15 @@ public class MainActivity extends AppCompatActivity {
         position1 = 5;
         position2 = 5;
         position3 = 5;
-        rv1.smoothScrollToPosition(position1);
-        rv2.smoothScrollToPosition(position2);
-        rv3.smoothScrollToPosition(position3);
+        layoutManager1.setScrollEnabled(true);
+        layoutManager2.setScrollEnabled(true);
+        layoutManager3.setScrollEnabled(true);
+        rv1.scrollToPosition(position1);
+        rv2.scrollToPosition(position2);
+        rv3.scrollToPosition(position3);
+        layoutManager1.setScrollEnabled(false);
+        layoutManager2.setScrollEnabled(false);
+        layoutManager3.setScrollEnabled(false);
     }
 
     private void updateText() {
