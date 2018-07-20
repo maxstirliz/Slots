@@ -2,6 +2,7 @@ package ua.artem.lymansky.slots;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,7 +17,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import ua.artem.lymansky.slots.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,10 +42,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView myCoins;
     private TextView lines;
     private TextView bet;
-    private TextView winCoins;
-
-    private LayoutInflater splashInflater;
-    private View view;
 
     private Game game;
 
@@ -59,11 +55,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Initializations
-        splashInflater = getLayoutInflater();
-        view = splashInflater.inflate(R.layout.win_splash,
-                (ViewGroup) findViewById(R.id.win_coin_container));
-
-        winCoins = findViewById(R.id.win_coins);
         game = new Game();
         spinButton = findViewById(R.id.spinButton);
         plusButton = findViewById(R.id.plusButton);
@@ -127,15 +118,17 @@ public class MainActivity extends AppCompatActivity {
                         rv3.scrollToPosition(game.getPosition(2));
                         updateText();
                         if (game.getHasWon()) {
-
-
+                            LayoutInflater inflater = getLayoutInflater();
+                            View layout = inflater.inflate(R.layout.win_splash,
+                                    (ViewGroup) findViewById(R.id.win_splash));
+                            TextView winCoins = layout.findViewById(R.id.win_coins);
+                            winCoins.setText(game.getPrize());
                             Toast toast = new Toast(MainActivity.this);
-                            toast.setView(view);
                             toast.setDuration(Toast.LENGTH_SHORT);
-                            toast.setGravity(Gravity.CENTER, 0, 0);
+                            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                            toast.setView(layout);
                             toast.show();
                             game.setHasWon(false);
-                            //TODO: set up win splash
                         }
                 }
             }
