@@ -200,12 +200,9 @@ public class MainActivity extends AppCompatActivity {
         layoutManager1.setScrollEnabled(true);
         layoutManager2.setScrollEnabled(true);
         layoutManager3.setScrollEnabled(true);
-        rv1.scrollToPosition(position1);
-        rv2.scrollToPosition(position2);
-        rv3.scrollToPosition(position3);
-        layoutManager1.setScrollEnabled(false);
-        layoutManager2.setScrollEnabled(false);
-        layoutManager3.setScrollEnabled(false);
+        rv1.smoothScrollToPosition(position1);
+        rv2.smoothScrollToPosition(position2);
+        rv3.smoothScrollToPosition(position3);
     }
 
     private void updateText() {
