@@ -1,7 +1,5 @@
 package ua.artem.lymansky.slots;
 
-import android.util.Log;
-
 public class Game {
 
     private int myCoins = 995;
@@ -23,15 +21,15 @@ public class Game {
 
     public void getSpinResults() {
         prize = 0;
-        slots[0] = getRandomInt();
-        slots[1] = getRandomInt();
-        slots[2] = getRandomInt();
-        Log.e("Game.class-->", "Slots values " + slots[0] + ", " + slots[1] + ", " + slots[2]);
-        if(slots[0] == 7 || slots[1] == 7 || slots[2] == 7) {
+        for (int i = 0; i < slots.length; i++) {
+            slots[i] = getRandomInt();
+        }
+
+        if (slots[0] == 7 || slots[1] == 7 || slots[2] == 7) {
             hasWon = true;
             int i = 0;
-            for(int a : slots) {
-                if(a == 7) i++;
+            for (int a : slots) {
+                if (a == 7) i++;
             }
 
             switch (i) {
@@ -82,21 +80,24 @@ public class Game {
     }
 
 
-
     //Setters
-    public void setMyCoins(int myCoins) { this.myCoins = myCoins; }
+    public void setMyCoins(int myCoins) {
+        this.myCoins = myCoins;
+    }
 
-    public void setLines(int lines) { this.lines = lines; }
+    public void setLines(int lines) {
+        this.lines = lines;
+    }
 
     public void betUp() {
-        if(bet < 100) {
+        if (bet < 100) {
             bet += 5;
             myCoins -= 5;
         }
     }
 
     public void betDown() {
-        if(bet > 5) {
+        if (bet > 5) {
             bet -= 5;
             myCoins += 5;
         }
@@ -106,18 +107,32 @@ public class Game {
         this.hasWon = hasWon;
     }
 
-    public void setPrize(int prize) { this.prize = prize; }
+    public void setPrize(int prize) {
+        this.prize = prize;
+    }
 
     //Getters
-    public String getMyCoins() { return Integer.toString(myCoins); }
+    public String getMyCoins() {
+        return Integer.toString(myCoins);
+    }
 
-    public String getLines() { return Integer.toString(lines); }
+    public String getLines() {
+        return Integer.toString(lines);
+    }
 
-    public String getBet() { return Integer.toString(bet); }
+    public String getBet() {
+        return Integer.toString(bet);
+    }
 
-    public String getJackpot() { return Integer.toString(jackpot); }
+    public String getJackpot() {
+        return Integer.toString(jackpot);
+    }
 
-    public boolean getHasWon() { return hasWon; }
+    public boolean getHasWon() {
+        return hasWon;
+    }
 
-    public String getPrize() { return Integer.toString(prize); }
+    public String getPrize() {
+        return Integer.toString(prize);
+    }
 }

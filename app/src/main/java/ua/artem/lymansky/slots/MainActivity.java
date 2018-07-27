@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -163,7 +162,6 @@ public class MainActivity extends AppCompatActivity {
                 rv1.smoothScrollToPosition(position1);
                 rv2.smoothScrollToPosition(position2);
                 rv3.smoothScrollToPosition(position3);
-                Log.e("Game.class-->", "Balance is " + game.getMyCoins() + ", the prize is " + game.getPrize());
             }
         });
 
