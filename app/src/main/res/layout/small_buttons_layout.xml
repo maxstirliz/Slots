@@ -73,24 +73,29 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/minus"
         android:textSize="@dimen/text_jackpot"
-        app:layout_constraintBottom_toBottomOf="@+id/minusButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/minusButton"
         app:layout_constraintStart_toStartOf="@+id/minusButton"
-        app:layout_constraintTop_toTopOf="@+id/minusButton" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/plus"
         android:textSize="@dimen/text_jackpot"
-        app:layout_constraintBottom_toBottomOf="@+id/plusButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/plusButton"
-        app:layout_constraintStart_toStartOf="@+id/plusButton" />
+        app:layout_constraintStart_toStartOf="@+id/plusButton"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

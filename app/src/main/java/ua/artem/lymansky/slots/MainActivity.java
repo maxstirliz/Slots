@@ -90,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
         rv1.setAdapter(adapter);
         rv2.setAdapter(adapter);
         rv3.setAdapter(adapter);
-        rv1.setActivated(false);
         rv1.scrollToPosition(position1);
         rv2.scrollToPosition(position2);
         rv3.scrollToPosition(position3);
